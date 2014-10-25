@@ -22,11 +22,11 @@ pwrData <- cbind(pwr,datetime)
 
 ## Create PNG file
 png(filename = "plot3.png", width = 480, height = 480, bg="white")
-with(pwrData, plot(datetime, Sub_metering_1 + Sub_metering_2 + Sub_metering_3, type = "n", xlab = " ", ylab = "Energy sub metering"))
+with(pwrData, plot(datetime, Sub_metering_1, type = "n", xlab = "", ylab = "Energy sub metering"))
 with(pwrData, lines(datetime, Sub_metering_1, col = "black"))
 with(pwrData, lines(datetime, Sub_metering_2, col = "red"))
 with(pwrData, lines(datetime, Sub_metering_3, col = "blue"))
-legend("topright", lwd=1, lty= c(1,1,1,1), col = c("black", "red", "blue"), 
+legend("topright", lwd=1, lty= 1, col = c("black", "red", "blue"), 
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 dev.off()
 
