@@ -1,4 +1,4 @@
-## Get the names of the columns
+## Get the names of the columns and store them
 getColNames <- read.table("household_power_consumption.txt", header=TRUE,sep = ";", nrows=1)
 
 ## Read in only the lines for the dates 2007-02-01 and 2007-2-02 and assign column names
@@ -28,5 +28,6 @@ with(pwrData, lines(datetime, Sub_metering_2, col = "red"))
 with(pwrData, lines(datetime, Sub_metering_3, col = "blue"))
 legend("topright", lwd=1, lty= 1, col = c("black", "red", "blue"), 
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
-dev.off()
 
+## clear the device
+dev.off()
