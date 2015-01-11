@@ -1,4 +1,4 @@
-## Get the names of the columns and store them
+## Get the names of the columns
 getColNames <- read.table("household_power_consumption.txt", header=TRUE,sep = ";", nrows=1)
 
 ## Read in only the lines for the dates 2007-02-01 and 2007-2-02 and assign column names
@@ -30,7 +30,7 @@ par(mfcol = c(2, 2))
 with(pwrData, plot(datetime, Global_active_power, type = "l", xlab= " " , ylab = "Global Active Power"))
 
 ## create second plot
-with(pwrData, plot(datetime, Sub_metering_1, type = "n", xlab = "", ylab = "Energy sub metering"))
+with(pwrData, plot(datetime, type = "n", xlab = " ", ylab = "Energy sub metering"))
 with(pwrData, lines(datetime, Sub_metering_1, col = "black"))
 with(pwrData, lines(datetime, Sub_metering_2, col = "red"))
 with(pwrData, lines(datetime, Sub_metering_3, col = "blue"))
@@ -45,3 +45,4 @@ with(pwrData, plot(datetime, Global_reactive_power, type = "l"))
 
 ## clear the device
 dev.off()
+

@@ -1,4 +1,4 @@
-## Get the names of the columns and store them
+## Get the names of the columns
 getColNames <- read.table("household_power_consumption.txt", header=TRUE,sep = ";", nrows=1)
 
 ## Read in only the lines for the dates 2007-02-01 and 2007-2-02 and assign column names
@@ -19,6 +19,4 @@ pwr <- read.table("household_power_consumption.txt", header = FALSE, sep = ";",
 ## Create PNG file
 png(filename = "plot1.png",width = 480, height = 480, bg="white")
 with(pwr, hist(pwr$Global_active_power, col= "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)"))
-
-## clear the device
 dev.off()

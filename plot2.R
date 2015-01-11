@@ -1,4 +1,4 @@
-## Get the names of the columns and store them
+## Get the names of the columns
 getColNames <- read.table("household_power_consumption.txt", header=TRUE,sep = ";", nrows=1)
 
 ## Read in only the lines for the dates 2007-02-01 and 2007-2-02 and assign column names
@@ -23,6 +23,4 @@ pwrData <- cbind(pwr,datetime)
 ## Create PNG file
 png(filename = "plot2.png",width = 480, height = 480, bg="white")
 with(pwrData, plot(datetime, Global_active_power, type = "l", xlab= " " , ylab = "Global Active Power (kilowatts)"))
-
-## clear the device
 dev.off()
